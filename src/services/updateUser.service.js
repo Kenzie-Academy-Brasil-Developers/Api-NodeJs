@@ -1,6 +1,6 @@
 import users from "../dataBase";
 
-const updateUserService = (id, name, email, isAdm) => {
+const updateUserService = (id, name, email, password) => {
 
     const userIndex = users.findIndex((user) => user.id === id);
 
@@ -11,6 +11,7 @@ const updateUserService = (id, name, email, isAdm) => {
 
     if(name) {userUpdade.name = name};
     if(email) {userUpdade.email = email};
+    if(password) {userUpdade.password = password}
 
     users[userIndex] = { ...users[userIndex], ...userUpdade};
 
